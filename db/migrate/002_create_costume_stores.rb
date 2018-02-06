@@ -1,2 +1,13 @@
-class CreateCostumeStores < ActiveRecord::Migration
+class CreateCostumeStores < ActiveRecord::Migration[4.2]
+  def change
+    create_table :costume_stores do |c|
+      c.string :name
+      c.string :location
+      c.integer :costume_inventory
+      c.integer :employees
+      c.boolean :open_or_closed
+      c.datetime :opening_time
+      c.datetime :closing_time
+    end
+  end
 end
